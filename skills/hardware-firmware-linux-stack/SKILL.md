@@ -8,7 +8,7 @@ platforms: [linux]
 metadata:
   hermes:
     tags: [hardware, firmware, bios, uefi, linux, kernel, board-bringup, device-tree, acpi, embedded, debugging]
-    related_skills: [uefi-firmware, systematic-debugging, test-driven-development, codebase-inspection, linux-desktop-apps]
+    related_skills: [pcie-debug-and-design, acpi-platform-enablement, board-bringup-lab, linux-kernel-driver-enablement, uefi-firmware, systematic-debugging, test-driven-development]
 ---
 
 # Hardware-Firmware-Linux Stack Engineering
@@ -53,7 +53,11 @@ Use this skill as the cross-layer orchestrator. When a task narrows into a forma
 
 - Local Hermes skill: `uefi-firmware` — use for UEFI architecture, EDK II, firmware package structure, PEI/DXE/BDS, protocols, HOBs, NVRAM, and firmware-specific review.
 - External reference repo: https://github.com/MarsDoge/uefi-firmware-skill — MarsDoge's UEFI firmware skill repository; consult for UEFI/ACPI-oriented references and keep this skill focused on cross-layer hardware/firmware/Linux handoff and lab debugging.
-- This skill should link outward to domain skills rather than becoming a giant monolith. As new skills are created for PCIe, USB, DDR, storage, BMC, EC, power, thermal, board design, or Linux kernel subsystems, add them here as focused references.
+- Child skill: `pcie-debug-and-design` — use for PCIe root ports/endpoints/switches/retimers, link training, speed/width downgrade, AER/DPC, ASPM/L1SS, hot-plug, firmware resource windows, and Linux PCI enumeration.
+- Child skill: `acpi-platform-enablement` — use for ACPI DSDT/SSDT, `_CRS`, `_DSD`, `_STA`, `_DEP`, `_OSC`, UEFI table handoff, AML/ASL diagnostics, and Linux ACPI driver binding.
+- Child skill: `board-bringup-lab` — use for first power, rail/clock/reset/strap measurements, serial/JTAG/recovery path, boot milestones, lab evidence folders, and prototype handoff reports.
+- Child skill: `linux-kernel-driver-enablement` — use for Linux driver binding/probe/resources, DT/ACPI validation, regulators/clocks/resets/pinctrl/IRQ, dynamic debug, tracing, and upstreamable patch workflow.
+- This skill should continue linking outward to domain skills rather than becoming a giant monolith. As new skills are created for USB, DDR, storage, BMC, EC, power, thermal, or other Linux kernel subsystems, add them here as focused references.
 - Skill-building method reference: `references/skill-development-method.md` — optional Nuwa-inspired technical distillation method adapted from https://github.com/alchaincyf/nuwa-skill. Use it only when it improves class-level hardware/firmware/Linux skills; skip it if it adds overhead or persona-like baggage.
 
 ### Standards and Specification Landing Pages
