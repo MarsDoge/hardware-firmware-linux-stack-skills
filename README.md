@@ -92,6 +92,18 @@ skills/linux-kernel-driver-enablement/templates/*
 skills/linux-kernel-driver-enablement/scripts/*.sh
 ```
 
+## Validation
+
+Run the same checks as CI before committing:
+
+```bash
+python scripts/validate-skills.py
+find skills -path '*/scripts/*.sh' -print0 | xargs -0 -r bash -n
+git diff --check
+```
+
+GitHub Actions runs `.github/workflows/validate-skills.yml` on push, pull request, and manual dispatch. The validator checks skill frontmatter, description length, required headings, related-skill references, support-file links, and executable shell helpers.
+
 ## Design notes
 
 - The main `hardware-firmware-linux-stack` skill is a router/orchestrator, not a monolithic protocol encyclopedia.
