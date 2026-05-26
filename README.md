@@ -12,7 +12,12 @@ skills/
 ├── pcie-debug-and-design/                # PCIe design, link training, AER, ASPM, enumeration
 ├── acpi-platform-enablement/             # ACPI DSDT/SSDT, _CRS/_DSD/_STA, Linux ACPI handoff
 ├── board-bringup-lab/                    # first power, rails, clocks, reset, straps, lab evidence
-└── linux-kernel-driver-enablement/       # driver binding/probe/resources/DT/ACPI/upstreaming
+├── linux-kernel-driver-enablement/       # driver binding/probe/resources/DT/ACPI/upstreaming
+├── ddr-lpddr-bringup/                    # DRAM topology, training, ECC/RAS, margining
+├── usb-typec-pd-debug/                   # USB2/USB3/USB4, Type-C, PD, mux/retimer
+├── storage-nvme-sata-debug/              # NVMe/SATA/eMMC/UFS/SD boot and block evidence
+├── power-thermal-validation/             # rails, regulators, PMIC, thermal, fan, throttling
+└── bmc-ec-platform-control/              # BMC/EC, OpenBMC, IPMI/Redfish, platform control
 ```
 
 ## What it covers
@@ -22,6 +27,11 @@ skills/
 - Firmware / BIOS / UEFI / bootloader: image provenance, OS handoff, ACPI/DT/SMBIOS
 - PCIe: root ports, endpoints, retimers, link speed/width, AER/DPC, ASPM, resource windows
 - ACPI: DSDT/SSDT, `_CRS`, `_DSD`, `_STA`, table handoff, Linux ACPI debug
+- DDR/LPDDR: topology, SI/PI constraints, firmware training, ECC/RAS, margining and stress evidence
+- USB / Type-C / PD: CC/VBUS/VCONN, role swap, PD negotiation, mux/retimer/PHY, Linux USB evidence
+- Storage: NVMe/SATA/eMMC/UFS/SD boot media, block devices, SMART/NVMe logs, data-integrity evidence
+- Power / thermal: regulators, PMIC sequencing, rails, thermal zones, cooling devices, throttling
+- BMC / EC: OpenBMC, IPMI/Redfish, host management, sensors, fans, power/reset ownership
 - Linux kernel enablement: driver binding, probe defer, regulators, clocks, resets, pinctrl, GPIO, I2C/SPI/PCIe/USB
 - Userspace integration: udev, systemd, firmware blobs, permissions, diagnostics
 - Cross-layer debugging: evidence-first triage from hardware through userspace
@@ -90,6 +100,14 @@ skills/board-bringup-lab/scripts/*.sh
 skills/linux-kernel-driver-enablement/references/*.md
 skills/linux-kernel-driver-enablement/templates/*
 skills/linux-kernel-driver-enablement/scripts/*.sh
+skills/ddr-lpddr-bringup/references/*.md
+skills/usb-typec-pd-debug/references/*.md
+skills/usb-typec-pd-debug/scripts/*.sh
+skills/storage-nvme-sata-debug/references/*.md
+skills/storage-nvme-sata-debug/scripts/*.sh
+skills/power-thermal-validation/references/*.md
+skills/power-thermal-validation/scripts/*.sh
+skills/bmc-ec-platform-control/references/*.md
 ```
 
 ## Validation
@@ -120,6 +138,9 @@ GitHub Actions runs `.github/workflows/validate-skills.yml` on push, pull reques
 - Linux kernel docs: https://docs.kernel.org/
 - Linux PCI docs: https://docs.kernel.org/PCI/
 - Linux ACPI docs: https://docs.kernel.org/firmware-guide/acpi/
+- USB-IF documents: https://www.usb.org/documents
+- NVM Express specifications: https://nvmexpress.org/specifications/
+- OpenBMC docs: https://github.com/openbmc/docs
 
 ## License
 

@@ -8,7 +8,7 @@ platforms: [linux]
 metadata:
   hermes:
     tags: [hardware, firmware, bios, uefi, linux, kernel, board-bringup, device-tree, acpi, embedded, debugging]
-    related_skills: [pcie-debug-and-design, acpi-platform-enablement, board-bringup-lab, linux-kernel-driver-enablement, uefi-firmware, systematic-debugging, test-driven-development]
+    related_skills: [pcie-debug-and-design, acpi-platform-enablement, board-bringup-lab, linux-kernel-driver-enablement, ddr-lpddr-bringup, usb-typec-pd-debug, storage-nvme-sata-debug, power-thermal-validation, bmc-ec-platform-control, uefi-firmware, systematic-debugging, test-driven-development]
 ---
 
 # Hardware-Firmware-Linux Stack Engineering
@@ -57,7 +57,12 @@ Use this skill as the cross-layer orchestrator. When a task narrows into a forma
 - Child skill: `acpi-platform-enablement` — use for ACPI DSDT/SSDT, `_CRS`, `_DSD`, `_STA`, `_DEP`, `_OSC`, UEFI table handoff, AML/ASL diagnostics, and Linux ACPI driver binding.
 - Child skill: `board-bringup-lab` — use for first power, rail/clock/reset/strap measurements, serial/JTAG/recovery path, boot milestones, lab evidence folders, and prototype handoff reports.
 - Child skill: `linux-kernel-driver-enablement` — use for Linux driver binding/probe/resources, DT/ACPI validation, regulators/clocks/resets/pinctrl/IRQ, dynamic debug, tracing, and upstreamable patch workflow.
-- This skill should continue linking outward to domain skills rather than becoming a giant monolith. As new skills are created for USB, DDR, storage, BMC, EC, power, thermal, or other Linux kernel subsystems, add them here as focused references.
+- Child skill: `ddr-lpddr-bringup` — use for DRAM topology, rails, reset/CKE, clocking, SI/PI, SPD/straps, firmware memory training, ECC/RAS, margining, and Linux memory stability evidence.
+- Child skill: `usb-typec-pd-debug` — use for USB2/USB3/USB4, Type-C CC/VBUS/VCONN, PD negotiation, alt modes, mux/retimer/PHY paths, xHCI/DWC, UCSI/TCPM, and Linux USB evidence.
+- Child skill: `storage-nvme-sata-debug` — use for NVMe over PCIe, SATA/AHCI, eMMC/UFS/SD boot media, firmware boot order, block devices, SMART/NVMe logs, power states, hotplug, and data-integrity evidence.
+- Child skill: `power-thermal-validation` — use for PMIC/regulator rails, sequencing, brownouts, current limits, thermal zones, sensors, fans, cooling policy, throttling, suspend/resume power states, and Linux hwmon/thermal evidence.
+- Child skill: `bmc-ec-platform-control` — use for BMC/EC/OpenBMC platform ownership, power/reset sequencing, sensors, fans, GPIO/I2C/SMBus, IPMI/Redfish, host handoff, firmware update, watchdog, and recovery workflows.
+- This skill should continue linking outward to domain skills rather than becoming a giant monolith. As new skills are created for networking, display, audio, security, manufacturing, or other Linux kernel subsystems, add them here as focused references.
 - Skill-building method reference: `references/skill-development-method.md` — optional Nuwa-inspired technical distillation method adapted from https://github.com/alchaincyf/nuwa-skill. Use it only when it improves class-level hardware/firmware/Linux skills; skip it if it adds overhead or persona-like baggage.
 
 ### Standards and Specification Landing Pages
