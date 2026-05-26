@@ -1,4 +1,4 @@
-# hardware-firmware-linux-stack-skill
+# hardware-firmware-linux-stack-skills
 
 A Hermes/Agent Skills-compatible skill for cross-layer hardware, firmware, BIOS/UEFI, bootloader, Linux kernel, and userspace engineering.
 
@@ -25,9 +25,9 @@ Then restart Hermes or reload skills if your runtime supports it.
 ## Install from GitHub
 
 ```bash
-git clone https://github.com/MarsDoge/hardware-firmware-linux-stack-skill.git /tmp/hardware-firmware-linux-stack-skill
+git clone https://github.com/MarsDoge/hardware-firmware-linux-stack-skills.git /tmp/hardware-firmware-linux-stack-skills
 mkdir -p ~/.hermes/skills/software-development
-cp -R /tmp/hardware-firmware-linux-stack-skill/skills/hardware-firmware-linux-stack ~/.hermes/skills/software-development/hardware-firmware-linux-stack
+cp -R /tmp/hardware-firmware-linux-stack-skills/skills/hardware-firmware-linux-stack ~/.hermes/skills/software-development/hardware-firmware-linux-stack
 ```
 
 ## Skill structure
